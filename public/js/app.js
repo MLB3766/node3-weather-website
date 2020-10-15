@@ -15,9 +15,9 @@ weatherForm.addEventListener('submit', (e) => {
   // retrieve query string request from fetch() and sends a response
   //
   // CLIENT-SIDE: Web API fetch() async handler 
-  // 1. sends request to localhost:3000/weather
+  // 1. sends request to localhost:3000/weather OR Heroku host:port
   // 2. retrieves JSON data via server handler response
-  fetch(`http://localhost:3000/weather?address=${location}`)
+  fetch(`/weather?address=${location}`)
     .then(response => response.json())
     .then(data => {
 
