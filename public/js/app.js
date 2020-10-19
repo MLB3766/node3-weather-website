@@ -2,6 +2,8 @@
 const weatherForm = document.querySelector('#search-form')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
+const messageThree = document.querySelector('#message-3')
+const messageIcon = document.querySelector('#icon')
 
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -26,7 +28,9 @@ weatherForm.addEventListener('submit', (e) => {
         messageOne.textContent = data.error
       } else {
         messageOne.textContent = `${data.name}, ${data.region}, ${data.country}.`
-        messageTwo.textContent = `${data.forecastString}`
+        messageTwo.textContent = `Localtime at location: ${data.localtime}`
+        messageThree.textContent = `${data.forecastString}`
+        messageIcon.src = data.icon
       }
   })
 })

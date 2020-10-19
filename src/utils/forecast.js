@@ -19,10 +19,14 @@ const forecast = (latitude, longitude, units, callback) => {
         region: location.region,
         lat: location.lat,
         lon: location.lon,
+        localtime: location.localtime,
         temp: current.temperature,
         feelsLike: current.feelslike,
+        humidity: current.humidity,
+        cloudcover: current.cloudcover,
         desc: current.weather_descriptions[0],
-        forecastString: `${current.weather_descriptions[0]}. It is currently ${current.temperature} degrees. It feels like ${current.feelslike} degrees.`
+        icon: current.weather_icons[0],
+        forecastString: `${current.weather_descriptions[0]}. It is currently ${current.temperature} degrees with ${current.humidity}% humidity. It feels like ${current.feelslike} degrees.`
       })
     }
   })
